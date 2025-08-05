@@ -19,18 +19,6 @@ function setGameMode(mode){
     document.querySelector(`[onClick="setGameMode('${mode}')"]`).classList.add('active');
     resetGame();
 }
-function createBoard(){
-    const board=document.getElementById('board');
-    board.innerHTML='';
-    for(let i=0;i<9;i++){
-        const cell=document.createElement('div');
-        cell.className='cell';
-        cell.setAttribute('data-index',i);
-        cell.addEventListener('click',handleCellClick);
-        board.appendChild(cell);
-    }
-}
-
 function updateStatus(){
     const status=document.getElementById('status');
     if(checkWinner()){
@@ -130,14 +118,18 @@ function highlightWinningCells(){
     });
 }
 
-function resetGame(){
-    gameBoard=Array(9).fill('');
-    currPlayer='X';
-    gameActive=true;
-    document.getElementById('status').textContent="X's turn";
-    const board=document.getElementById('board');
-    board.innerHTML='';
-    createBoard();
+function resetGame() {
+  gameBoard = Array(9).fill('');
+  currPlayer = 'X';
+  gameActive = true;
+  document.getElementById('status').textContent = "X's turn";
+
+  document.querySelectorAll('.cell').forEach(cell => {
+    cell.textContent = '';
+    cell.className = 'cell'; // reset all classes
+  });
 }
-createBoard();
+document.querySelectorAll('.cell').forEach(cell => {
+  cell.addEventListener('click', handleCellClick);
+});
 
