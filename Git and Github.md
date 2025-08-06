@@ -111,14 +111,6 @@ git diff
 5. Push to GitHub
 6. Make another change and repeat the process
 
-## Helpful Tips for Teaching
-
-- **Start with visual tools**: Use GitHub Desktop or VS Code's Git integration before command line
-- **Use analogies**: Compare to familiar concepts like saving documents or taking photos
-- **Practice with dummy projects**: Use simple text files before real code
-- **Show the GitHub interface**: Demonstrate how commits look on the website
-- **Emphasize the "why"**: Explain benefits before diving into commands
-
 ## Common Questions & Answers
 
 **Q: What's the difference between Git and GitHub?**
